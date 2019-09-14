@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Library_system.User_controls
@@ -16,7 +9,7 @@ namespace Library_system.User_controls
         public register()
         {
             InitializeComponent();
-            
+
             OnInit();
         }
 
@@ -57,7 +50,7 @@ namespace Library_system.User_controls
         {
             if (!confirmed(txtbpassword.Text, txtbconfirm.Text))
                 return;
-                    
+
             varfirstname = txtbfirstname.Text;
             varlastname = txtblastname.Text;
             varbirthdate = dTPbirthdate.Value;
@@ -70,24 +63,23 @@ namespace Library_system.User_controls
 
         private bool confirmed(string password, string confirm)
         {
-            if (password.Equals(confirm))
-                return true;
-
-            return false;
+            return password.Equals(confirm);
         }
-
-        internal string varfirstname;
-        internal string varlastname;
-        internal DateTime varbirthdate;
-        internal string vargender;
-        internal string varmobilenumber;
-        internal string varemail;
-        internal string varusername;
-        internal string varpassword;
 
         private void btncancel_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
+
+        //Declarations
+        private string varfirstname;
+        private string varlastname;
+        private DateTime varbirthdate;
+        private string vargender;
+        private string varmobilenumber;
+        private string varemail;
+        private string varusername;
+        private string varpassword;
     }
 }
