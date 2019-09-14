@@ -12,6 +12,7 @@ namespace Library_system.Database
         }
 
         public System.Data.Entity.DbSet<Account> Accounts { get; set; }
+        public System.Data.Entity.DbSet<User> Users { get; set; }
     }
 
 }

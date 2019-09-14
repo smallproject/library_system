@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Library_system.Database.UnitOfWork;
+using System;
 using System.Windows.Forms;
 
 namespace Library_system.User_controls
@@ -59,6 +60,8 @@ namespace Library_system.User_controls
             varemail = txtbemail.Text;
             varusername = txtbusername.Text;
             varpassword = txtbpassword.Text;
+
+            IAccountOuw ouw = new AccountOuw();
         }
 
         private bool confirmed(string password, string confirm)

@@ -1,5 +1,7 @@
 ﻿namespace Library_system.Database.Repositories
 {
+
+    //account class repository for reading database
     interface IAccountRepository
     {
         Account GetMemberById { get; set; }

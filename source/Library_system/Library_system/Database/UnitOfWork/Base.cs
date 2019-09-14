@@ -1,9 +1,11 @@
 ﻿namespace Library_system.Database.UnitOfWork
 {
+
+    //this is a global interface with basic function
     interface IBase
     {
-        void Create();
-        void Update();
-        void Delete();
+        bool Create();
+        bool Update();
+        bool Delete();
     }
 }

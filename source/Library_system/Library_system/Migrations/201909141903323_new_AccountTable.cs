@@ -8,7 +8,7 @@ namespace Library_system.Migrations
         public override void Up()
         {
             CreateTable(
-                "dbo.Account",
+                "dbo.User",
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
@@ -22,7 +22,7 @@ namespace Library_system.Migrations
         
         public override void Down()
         {
-            DropTable("dbo.Account");
+            DropTable("dbo.User");
         }
     }
 }

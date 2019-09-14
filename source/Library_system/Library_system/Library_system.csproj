@@ -85,9 +85,12 @@
       <DependentUpon>formuser_account.cs</DependentUpon>
     </Compile>
     <Compile Include="Database\Account.cs" />
+    <Compile Include="Database\Repositories\UserRepository.cs" />
+    <Compile Include="Database\UnitOfWork\AccountOuw.cs" />
+    <Compile Include="Database\User.cs" />
     <Compile Include="Database\LibrarySystemContext.cs" />
     <Compile Include="Database\Repositories\AccountRepository.cs" />
-    <Compile Include="Database\UnitOfWork\AccountUOW.cs" />
+    <Compile Include="Database\UnitOfWork\UserOuw.cs" />
     <Compile Include="Database\UnitOfWork\Base.cs" />
     <Compile Include="Migrations\201909141853463_database_creation.cs" />
     <Compile Include="Migrations\201909141853463_database_creation.Designer.cs">
@@ -96,6 +99,10 @@
     <Compile Include="Migrations\201909141903323_new_AccountTable.cs" />
     <Compile Include="Migrations\201909141903323_new_AccountTable.Designer.cs">
       <DependentUpon>201909141903323_new_AccountTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909141956112_new_UserTable.cs" />
+    <Compile Include="Migrations\201909141956112_new_UserTable.Designer.cs">
+      <DependentUpon>201909141956112_new_UserTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -129,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909141903323_new_AccountTable.resx">
       <DependentUpon>201909141903323_new_AccountTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909141956112_new_UserTable.resx">
+      <DependentUpon>201909141956112_new_UserTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
