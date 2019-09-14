@@ -47,7 +47,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -77,6 +84,20 @@
     <Compile Include="Account\formuser_account.Designer.cs">
       <DependentUpon>formuser_account.cs</DependentUpon>
     </Compile>
+    <Compile Include="Database\Account.cs" />
+    <Compile Include="Database\LibrarySystemContext.cs" />
+    <Compile Include="Database\Repositories\AccountRepository.cs" />
+    <Compile Include="Database\UnitOfWork\AccountUOW.cs" />
+    <Compile Include="Database\UnitOfWork\Base.cs" />
+    <Compile Include="Migrations\201909141853463_database_creation.cs" />
+    <Compile Include="Migrations\201909141853463_database_creation.Designer.cs">
+      <DependentUpon>201909141853463_database_creation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909141903323_new_AccountTable.cs" />
+    <Compile Include="Migrations\201909141903323_new_AccountTable.Designer.cs">
+      <DependentUpon>201909141903323_new_AccountTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User controls\login.cs">
@@ -103,6 +124,12 @@
     <EmbeddedResource Include="Account\formregister.resx">
       <DependentUpon>formregister.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909141853463_database_creation.resx">
+      <DependentUpon>201909141853463_database_creation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909141903323_new_AccountTable.resx">
+      <DependentUpon>201909141903323_new_AccountTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -119,6 +146,7 @@
     <EmbeddedResource Include="User controls\register.resx">
       <DependentUpon>register.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
