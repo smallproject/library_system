@@ -61,7 +61,7 @@ namespace Library_system.User_controls
             varusername = txtbusername.Text;
             varpassword = txtbpassword.Text;
 
-            IAccountOuw ouw = new AccountOuw();
+            IAccountUow uow = new AccountUow();
         }
 
         private bool confirmed(string password, string confirm)

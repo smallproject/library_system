@@ -2,12 +2,12 @@
 
 namespace Library_system.Database.UnitOfWork
 {
-    interface IAccountOuw : IBase
+    interface IAccountUow : IBase
     {
         Account Account { get; set; }
     }
 
-    class AccountOuw : IAccountOuw
+    class AccountUow : IAccountUow
     {
         public bool Create()
         {

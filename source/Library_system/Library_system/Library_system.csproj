@@ -86,11 +86,11 @@
     </Compile>
     <Compile Include="Database\Account.cs" />
     <Compile Include="Database\Repositories\UserRepository.cs" />
-    <Compile Include="Database\UnitOfWork\AccountOuw.cs" />
+    <Compile Include="Database\UnitOfWork\AccountUow.cs" />
     <Compile Include="Database\User.cs" />
     <Compile Include="Database\LibrarySystemContext.cs" />
     <Compile Include="Database\Repositories\AccountRepository.cs" />
-    <Compile Include="Database\UnitOfWork\UserOuw.cs" />
+    <Compile Include="Database\UnitOfWork\UserUow.cs" />
     <Compile Include="Database\UnitOfWork\Base.cs" />
     <Compile Include="Migrations\201909141853463_database_creation.cs" />
     <Compile Include="Migrations\201909141853463_database_creation.Designer.cs">

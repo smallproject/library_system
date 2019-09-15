@@ -3,12 +3,12 @@
 namespace Library_system.Database.UnitOfWork
 {
     //account interface unit of work for database manipulation
-    interface IUserOuw : IBase
+    interface IUserUow : IBase
     {
         User User { get; set; }
     }
 
-    class UserOuw : IUserOuw
+    class UserUow : IUserUow
     {
         private LibrarySystemContext dbContext;
         public bool Create()
