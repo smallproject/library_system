@@ -1,4 +1,5 @@
-﻿using Library_system.Database.UnitOfWork;
+﻿using Library_system.Database.Repositories;
+using Library_system.Database.UnitOfWork;
 using System;
 using System.Windows.Forms;
 
@@ -61,7 +62,25 @@ namespace Library_system.User_controls
             varusername = txtbusername.Text;
             varpassword = txtbpassword.Text;
 
+            IAccountRepository repository = new AccountRepository();
             IAccountUow uow = new AccountUow();
+
+            //needs to evaluate if necessary
+            //uow.Account = repository.Register(varfirstname, varlastname,
+            //    varbirthdate, vargender, varmobilenumber, varemail, varusername, varpassword);
+
+            uow.Account = new Database.Account()
+            {
+                Id = "02",
+                BirthDate = varbirthdate,
+                Email = varemail,
+                FirstName = varfirstname,
+                Gender = vargender,
+                LastName = varlastname,
+                MobileNumber = varmobilenumber
+            };
+            uow.ReadVarAccount();
+            uow.Create();
         }
 
         private bool confirmed(string password, string confirm)

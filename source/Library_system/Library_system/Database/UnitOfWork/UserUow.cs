@@ -17,7 +17,7 @@ namespace Library_system.Database.UnitOfWork
             {
                 try
                 {
-                    //dbContext.Accounts.Add(User);
+                    dbContext.Users.Add(User);
                     dbContext.SaveChanges();
                 }
                 catch (Exception e)

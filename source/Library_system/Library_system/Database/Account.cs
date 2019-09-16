@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace Library_system.Database
 {
@@ -12,7 +13,7 @@ namespace Library_system.Database
         string MobileNumber { get; set; }
         string Email { get; set; }
     }
-    class Account : IAccount
+    class Account : IAccount, IEnumerable
     {
         public string Id { get; set; }
         public string FirstName { get; set; }
@@ -21,5 +22,11 @@ namespace Library_system.Database
         public string Gender { get; set; }
         public string MobileNumber { get; set; }
         public string Email { get; set; }
+
+        public IEnumerator GetEnumerator()
+        {
+            //needs to be created to read class value
+            throw new NotImplementedException();
+        }
     }
 }

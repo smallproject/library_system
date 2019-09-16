@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Text;
+using System.Windows.Forms;
 
 namespace Library_system.Database.UnitOfWork
 {
     interface IAccountUow : IBase
     {
         Account Account { get; set; }
+        void ReadVarAccount();
     }
 
     class AccountUow : IAccountUow
@@ -20,7 +23,7 @@ namespace Library_system.Database.UnitOfWork
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e);
+                    MessageBox.Show(e.Message);
                     throw new NotImplementedException();
                 }
             }
@@ -41,5 +44,34 @@ namespace Library_system.Database.UnitOfWork
 
         private LibrarySystemContext dbContext;
         public Account Account { get; set; }
+        public void ReadVarAccount()
+        {
+            StringBuilder text = new StringBuilder();
+
+            //needs to created ienumerator for account class
+            //to enable foreach loop
+            //foreach (var data in Account)
+            //{
+            //    text.AppendLine(Account.);
+            //}
+
+            text.AppendLine(Account.FirstName);
+            text.AppendLine(Account.LastName);
+            text.AppendLine(Account.BirthDate.ToString());
+            text.AppendLine(Account.Gender);
+            text.AppendLine(Account.MobileNumber);
+            text.AppendLine(Account.Email);
+
+            try
+            {
+                MessageBox.Show(text.ToString());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+
+        }
     }
 }
