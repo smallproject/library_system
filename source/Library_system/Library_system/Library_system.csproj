@@ -85,8 +85,11 @@
       <DependentUpon>formuser_account.cs</DependentUpon>
     </Compile>
     <Compile Include="Database\Account.cs" />
+    <Compile Include="Database\Index.cs" />
+    <Compile Include="Database\Repositories\IndexRepository.cs" />
     <Compile Include="Database\Repositories\UserRepository.cs" />
     <Compile Include="Database\UnitOfWork\AccountUow.cs" />
+    <Compile Include="Database\UnitOfWork\IndexUow.cs" />
     <Compile Include="Database\User.cs" />
     <Compile Include="Database\LibrarySystemContext.cs" />
     <Compile Include="Database\Repositories\AccountRepository.cs" />
@@ -103,6 +106,10 @@
     <Compile Include="Migrations\201909141956112_new_UserTable.cs" />
     <Compile Include="Migrations\201909141956112_new_UserTable.Designer.cs">
       <DependentUpon>201909141956112_new_UserTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909161714186_new_IndexTable.cs" />
+    <Compile Include="Migrations\201909161714186_new_IndexTable.Designer.cs">
+      <DependentUpon>201909161714186_new_IndexTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -139,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909141956112_new_UserTable.resx">
       <DependentUpon>201909141956112_new_UserTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909161714186_new_IndexTable.resx">
+      <DependentUpon>201909161714186_new_IndexTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
