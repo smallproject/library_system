@@ -19,7 +19,7 @@ namespace Library_system.User_controls
         public string lastname { get; set; }
         public DateTime birthdate { get; set; }
 
-        internal void OnInit()
+        void OnInit()
         {
             //labels
             lblregister.Text = "Registration";
@@ -90,7 +90,8 @@ namespace Library_system.User_controls
 
         private void btncancel_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            //Application.Exit();
+            this.Dispose();
         }
 
 
