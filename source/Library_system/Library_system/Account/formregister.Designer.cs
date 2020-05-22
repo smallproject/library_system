@@ -49,6 +49,7 @@
             this.ClientSize = new System.Drawing.Size(483, 471);
             this.Controls.Add(this.register1);
             this.Name = "formregister";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Registration";
             this.ResumeLayout(false);
 

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Library_system.Database
 {
@@ -23,10 +25,20 @@ namespace Library_system.Database
         public string MobileNumber { get; set; }
         public string Email { get; set; }
 
+        private readonly LibrarySystemContext _db = new LibrarySystemContext();
+
         public IEnumerator GetEnumerator()
         {
             //needs to be created to read class value
             throw new NotImplementedException();
+        }
+
+        public IEnumerable<Account> GetAll()
+        {
+            //db = new LibrarySystemContext();
+            return from r in _db.Accounts
+                   orderby r.FirstName
+                   select r;
         }
     }
 }

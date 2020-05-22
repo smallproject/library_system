@@ -87,6 +87,7 @@
     <Compile Include="Database\Account.cs" />
     <Compile Include="Database\Index.cs" />
     <Compile Include="Database\Repositories\IndexRepository.cs" />
+    <Compile Include="Database\Repositories\RegisterRepository.cs" />
     <Compile Include="Database\Repositories\UserRepository.cs" />
     <Compile Include="Database\UnitOfWork\AccountUow.cs" />
     <Compile Include="Database\UnitOfWork\IndexUow.cs" />
@@ -95,6 +96,12 @@
     <Compile Include="Database\Repositories\AccountRepository.cs" />
     <Compile Include="Database\UnitOfWork\UserUow.cs" />
     <Compile Include="Database\UnitOfWork\Base.cs" />
+    <Compile Include="Manage\Index_card.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\Index_card.Designer.cs">
+      <DependentUpon>Index_card.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201909141853463_database_creation.cs" />
     <Compile Include="Migrations\201909141853463_database_creation.Designer.cs">
       <DependentUpon>201909141853463_database_creation.cs</DependentUpon>
@@ -126,17 +133,19 @@
     <Compile Include="User controls\register.Designer.cs">
       <DependentUpon>register.cs</DependentUpon>
     </Compile>
-    <Compile Include="User controls\user_account.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="User controls\user_account.Designer.cs">
-      <DependentUpon>user_account.cs</DependentUpon>
+    <Compile Include="_Library_system_Database_LibrarySystemContextDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_Library_system_Database_LibrarySystemContextDataSet.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Account\formlogin.resx">
       <DependentUpon>formlogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Account\formregister.resx">
       <DependentUpon>formregister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Index_card.resx">
+      <DependentUpon>Index_card.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909141853463_database_creation.resx">
       <DependentUpon>201909141853463_database_creation.cs</DependentUpon>
@@ -176,6 +185,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="_Library_system_Database_LibrarySystemContextDataSet.xsc">
+      <DependentUpon>_Library_system_Database_LibrarySystemContextDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_Library_system_Database_LibrarySystemContextDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_Library_system_Database_LibrarySystemContextDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_Library_system_Database_LibrarySystemContextDataSet.xss">
+      <DependentUpon>_Library_system_Database_LibrarySystemContextDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

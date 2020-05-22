@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Library_system.Account;
+using System;
 using System.Windows.Forms;
-using Library_system.Account;
+using Library_system.Manage;
 
 namespace Library_system
 {
@@ -17,7 +15,7 @@ namespace Library_system
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formregister());
+            Application.Run(new formIndex_card());
         }
     }
 }
