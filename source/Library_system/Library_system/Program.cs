@@ -1,7 +1,6 @@
 ﻿using Library_system.Account;
 using System;
 using System.Windows.Forms;
-using Library_system.Manage;
 
 namespace Library_system
 {
@@ -15,7 +14,7 @@ namespace Library_system
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formIndex_card());
+            Application.Run(new formregister());
         }
     }
 }

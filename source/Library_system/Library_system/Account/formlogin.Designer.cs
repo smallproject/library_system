@@ -57,6 +57,7 @@
             this.btncancel.TabIndex = 13;
             this.btncancel.Text = "btncancel";
             this.btncancel.UseVisualStyleBackColor = true;
+            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
             // btnlogin
             // 

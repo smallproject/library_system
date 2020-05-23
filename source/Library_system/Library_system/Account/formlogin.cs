@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using Library_system.Database.Repositories;
+using System.Windows.Forms;
 
 namespace Library_system.Account
 {
@@ -41,7 +42,17 @@ namespace Library_system.Account
 
         private void btnlogin_Click(object sender, System.EventArgs e)
         {
+            IUserRepository repo = new UserRepository();
 
+            if (repo.FindMember(txtbusername.Text, txtbpassword.Text))
+            {
+
+            }
+        }
+
+        private void btncancel_Click(object sender, System.EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
