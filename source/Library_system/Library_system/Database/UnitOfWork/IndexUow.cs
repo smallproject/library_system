@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Library_system.Database.Repositories;
+using System;
 using System.Data.Entity;
 using System.Linq;
 using System.Windows.Forms;
@@ -9,6 +10,7 @@ namespace Library_system.Database.UnitOfWork
     {
         Index Index { get; set; }
         Index Get(string code);
+        bool IncrementCurrentIndex(string code);
     }
 
     class IndexUow : IIndexUow
@@ -83,6 +85,15 @@ namespace Library_system.Database.UnitOfWork
         public Index Get(string code)
         {
             return dbContext.Indices.FirstOrDefault(r => r.Code == code);
+        }
+
+        public bool IncrementCurrentIndex(string code)
+        {
+            IIndexRepository repo = new IndexRepository();
+            Index = repo.GetMemberByCode(code);
+            Index.CurrentIndex++;
+
+            return Update();
         }
 
         private readonly LibrarySystemContext dbContext;

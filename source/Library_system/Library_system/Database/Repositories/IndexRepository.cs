@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Linq;
 
 namespace Library_system.Database.Repositories
 {
@@ -9,14 +9,27 @@ namespace Library_system.Database.Repositories
     }
     class IndexRepository : IIndexRepository
     {
+        private readonly LibrarySystemContext _dbContext;
+        public IndexRepository()
+        {
+            _dbContext = new LibrarySystemContext();
+        }
+
         public Index GetMemberByCode(string code)
         {
-            throw new NotImplementedException();
+            return _dbContext.Indices.FirstOrDefault(r => r.Code == code);
         }
 
         public bool FindMember(string code)
         {
-            throw new NotImplementedException();
+            var member = _dbContext.Indices.Count(r => r.Code == code);
+
+            if (member.Equals(1))
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }
