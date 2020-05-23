@@ -1,4 +1,5 @@
-﻿using Library_system.Database.Repositories;
+﻿using Library_system.Database;
+using Library_system.Database.Repositories;
 using Library_system.Database.UnitOfWork;
 using System;
 using System.Windows.Forms;
@@ -63,15 +64,18 @@ namespace Library_system.User_controls
             varpassword = txtbpassword.Text;
 
             IAccountRepository repository = new AccountRepository();
-            IAccountUow uow = new AccountUow();
+            IAccountUow accountUow = new AccountUow();
 
             //needs to evaluate if necessary
             //uow.Account = repository.Register(varfirstname, varlastname,
             //    varbirthdate, vargender, varmobilenumber, varemail, varusername, varpassword);
 
-            uow.Account = new Database.Account()
+            //MessageBox.Show(repository.GetNewId("nca"));
+
+            //return;
+            accountUow.Account = new Database.Account()
             {
-                Id = "02",
+                Id = repository.GetNewId("nca"),
                 BirthDate = varbirthdate,
                 Email = varemail,
                 FirstName = varfirstname,
@@ -79,8 +83,29 @@ namespace Library_system.User_controls
                 LastName = varlastname,
                 MobileNumber = varmobilenumber
             };
-            uow.ReadVarAccount();
-            uow.Create();
+
+            //uow.ReadVarAccount();
+
+            //creates Account
+            if (accountUow.Create())
+            {
+                IUserUow userUow = new UserUow();
+                userUow.User = new User()
+                {
+                    Id = repository.GetNewId("nca"),
+                    Username = varusername,
+                    Password = varpassword,
+                    Created = DateTime.Now,
+                };
+
+                //creates user account
+                if (userUow.Create())
+                {
+                    //increments current code index
+                    IIndexUow uowIndex = new IndexUow();
+                    uowIndex.IncrementCurrentIndex("nca");
+                }
+            }
         }
 
         private bool confirmed(string password, string confirm)
